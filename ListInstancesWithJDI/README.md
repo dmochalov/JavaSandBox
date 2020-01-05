@@ -10,10 +10,13 @@ To run an example firstly make sure you need to
         from Oracle JDK Installation and put it to src\main\resources\scripts
     2) then you need to run install_to_maven (mvn shoud be in you PATH).
 
-After that to test example simply run following commands:
+After that to test example run following commands:
 set MAVEN_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=56856"
 mvn clean compile exec:java 
 
 It compiles and executes java program. Firts it set JDI adress for socket listening.
 After then programm connects to itself (using adress localhost:56856) gets VirtualMachine instance 
-and uses it to get all instannces of  java.lang.String class.
+and uses it to get all instannces of  java.lang.String class in current mvn JVM.
+
+## IDE
+Tested with netbeans 11.0
