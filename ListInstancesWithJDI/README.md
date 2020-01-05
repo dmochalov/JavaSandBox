@@ -19,3 +19,8 @@ After then program connects to itself (using address localhost:56856) gets Virtu
 
 ## IDE
 Tested with NetBeans 11.0
+
+## Source
+The program connects to remote JVM using SocketConnector. After attaching to the JVM it gets the instance of JVM.
+When getting an instance of a class you could get a com.sun.jdi.ObjectCollectedException exception. You can avoid it
+by using vm.suspend(); and vm.resume() between getting instances of a class but it would freeze all remote JVM.
